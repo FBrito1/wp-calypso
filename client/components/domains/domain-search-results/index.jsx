@@ -106,7 +106,7 @@ class DomainSearchResults extends React.Component {
 				);
 			}
 
-			if ( this.props.transferInAllowed ) {
+			if ( this.props.transferInAllowed && ! this.props.isSignupStep ) {
 				components = { a: <a href="#" onClick={ this.handleAddTransfer } />, small: <small /> };
 
 				if ( isNextDomainFree( this.props.cart ) ) {
@@ -209,7 +209,7 @@ class DomainSearchResults extends React.Component {
 					/>
 				);
 
-				if ( this.props.transferInAllowed ) {
+				if ( this.props.transferInAllowed && ! this.props.isSignupStep ) {
 					unavailableOffer = (
 						<DomainTransferSuggestion onButtonClick={ this.props.onClickTransfer } />
 					);
