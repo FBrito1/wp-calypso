@@ -109,8 +109,15 @@ input.transfer-domain-step__external-domain {
 	}
 
 	.transfer-domain-step__continue {
+		font-size: 12px;
 		display: flex;
-		justify-content: flex-end;
+		flex: 1 0;
+		align-items: center;
+		justify-content: space-between;
+
+		div {
+			padding-left: 20px;
+		}
 
 		button {
 			margin: 20px;
@@ -135,5 +142,11 @@ input.transfer-domain-step__external-domain {
 				flex: 0 1;
 			}
 		}
+	}
+}
+
+.transfer-domain-step__options {
+	legend {
+		margin-bottom: 0;
 	}
 }
