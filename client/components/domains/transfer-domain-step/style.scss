@@ -146,7 +146,18 @@ input.transfer-domain-step__external-domain {
 }
 
 .transfer-domain-step__options {
+	label {
+		color: $gray;
+	}
+
 	legend {
+		small {
+			padding-left: 10px;
+			color: $blue-wordpress;
+		}
+
+		color: $gray-dark;
 		margin-bottom: 0;
+		font-size: 15px;
 	}
 }
