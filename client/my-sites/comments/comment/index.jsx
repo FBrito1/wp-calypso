@@ -70,6 +70,13 @@ export class Comment extends Component {
 		}
 	};
 
+	toggleEditMode = () =>
+		this.setState( ( { isEditMode } ) => ( {
+			isEditMode: ! isEditMode,
+			isExpanded: ! isEditMode,
+			isReplyVisible: false,
+		} ) );
+
 	toggleExpanded = () => {
 		if ( ! this.props.isLoading && ! this.state.isEditMode ) {
 			this.setState( ( { isExpanded } ) => ( {
@@ -107,6 +114,7 @@ export class Comment extends Component {
 		const classes = classNames( 'comment', {
 			'is-bulk-mode': isBulkMode,
 			'is-collapsed': ! isExpanded,
+			'is-edit-mode': isEditMode,
 			'is-expanded': isExpanded,
 			'is-placeholder': isLoading,
 			'is-pending': commentIsPending,
@@ -137,6 +145,7 @@ export class Comment extends Component {
 						{ showActions && (
 							<CommentActions
 								{ ...{ commentId, removeFromPersisted, updatePersisted } }
+								toggleEditMode={ this.toggleEditMode }
 								toggleReply={ this.toggleReply }
 							/>
 						) }
